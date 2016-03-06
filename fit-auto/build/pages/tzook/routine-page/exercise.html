@@ -1,0 +1,25 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Start Workout</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="getting-started">
+
+    <h2 class="workout-title">{{workout.title}}</h2>
+
+    <h5><span class="bold">Duration ~</span> {{workout.getEstimatedTime()}} min</h5>
+
+    <h5><span class="bold">Muscles:</span> {{workout.getMainMuscles()}}</h5>
+
+    <div class="text-center">
+        <button round>
+            <ion-icon name="send"></ion-icon>
+            Start Workout
+        </button>
+    </div>
+
+
+</ion-content>

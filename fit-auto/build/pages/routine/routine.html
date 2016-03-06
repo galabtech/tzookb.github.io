@@ -1,0 +1,14 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{routine.getType()}}</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="getting-started">
+
+    <h2 class="workout-title" (click)="runExercise()">runExercise</h2>
+    <h2 class="workout-title" (click)="openRestModal(45)">Routine here</h2>
+
+</ion-content>

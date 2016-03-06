@@ -1,0 +1,30 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Workout Details</ion-title>
+</ion-navbar>
+
+
+<ion-content class="getting-started">
+
+    <ion-list no-lines>
+
+        <div *ngFor="#routine of workout.routines">
+
+            <ion-item-divider light>{{routine.getType() | uppercase}} Routine</ion-item-divider>
+
+            <ion-item  *ngFor="#exercise of routine.getExercises()" (click)="itemTapped($event, item)">
+                <!--<ion-icon name="send" item-left></ion-icon>-->
+                {{exercise.title}}
+                <!--<div class="item-note" item-right>-->
+                    <!--{{exercise.image}}-->
+                <!--</div>-->
+            </ion-item>
+
+        </div>
+
+    </ion-list>
+
+
+</ion-content>

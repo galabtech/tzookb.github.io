@@ -1,0 +1,52 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Start Workout</ion-title>
+</ion-navbar>
+
+
+<ion-content class="getting-started">
+
+    <h2 class="workout-title">{{workout.title}}</h2>
+
+    <ion-list no-lines>
+
+        <div>
+
+            <ion-item>
+                <ion-icon name="stopwatch" item-left></ion-icon>
+                Duration &asymp;
+                <div class="item-note" item-right>
+                    {{workout.getEstimatedTime()}} min
+                </div>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="podium" item-left></ion-icon>
+                Muscles
+            </ion-item>
+
+            <ion-item  *ngFor="#muscle of workout.getMainMuscles()">
+                <!--<ion-icon name="send" item-left></ion-icon>-->
+                {{muscle}}
+            </ion-item>
+
+        </div>
+
+    </ion-list>
+
+    <div class="in-bottom full-width">
+        <button full (click)="startWorkout()">
+            <ion-icon name="send"></ion-icon>
+            Start Workout
+        </button>
+
+        <button full (click)="showWorkoutList()" secondary>
+            <ion-icon name="list"></ion-icon>
+            Display Exercises
+        </button>
+    </div>
+
+
+</ion-content>
